@@ -10,30 +10,29 @@ public class SerializationApp {
 
         List<Student> students = new ArrayList<>();
 
-        System.out.print("Masukkan jumlah mahasiswa yang ingin Anda inputkan: ");
+        System.out.print("Masukkan jumlah data yang ingin Anda masukkan: ");
         int quantity = input.nextInt();
 
         // For loop untuk melooping sebanyak jumlah mahasiswa
-        for (int i = 0; i < quantity; i++) {
+        for (int i = 1; i <= quantity; i++) {
             System.out.println("----------------------------------------------");
-            System.out.println("Masukkan data mahasiswa ke-" + (i + 1)); // i + 1 karena nilai i diinisiasi = 0,
-                                                                         // sehingga agar bilangan dimulai dari 1
-                                                                         // maka i ditambah 1
+            System.out.println("Masukkan data mahasiswa ke-" + i);
 
-            System.out.print("NIM: ");
+            System.out.print("Masukkan NIM: ");
             String nim = input.next();
 
-            System.out.print("Nama: ");
+            System.out.print("Masukkan Nama: ");
             String name = input.next();
 
-            System.out.print("Jenis Kelamin: ");
+            System.out.print("Masukkan Jenis Kelamin: ");
             String gender = input.next();
 
-            System.out.print("Nomor Telepon: ");
+            System.out.print("Masukkan Nomor Telepon: ");
             String phoneNumber = input.next();
 
             // Menambahkan data ke Array List
             students.add(new Student(nim, name, gender, phoneNumber));
+
         }
 
         input.close();
@@ -44,11 +43,11 @@ public class SerializationApp {
         // Membuat objek dari class SerializationDemo
         SerializationDemo demo = new SerializationDemo();
 
-        demo.serialize(students, "src/ObjectSerialization/file/2B.ser");
+        demo.serialize(students, "src/ObjectSerialization/file/NIM.ser");
         System.out.println("Serialization is done");
 
         System.out.println("Deserialize object...");
-        List<Student> newList = demo.deserialize("src/ObjectSerialization/file/2B.ser");
+        List<Student> newList = demo.deserialize("src/ObjectSerialization/file/NIM.ser");
 
         System.out.println("New List Student: " + newList);
     }

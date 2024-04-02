@@ -22,8 +22,7 @@ public class SerializationDemo {
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))) {
             sList = (List<Student>) in.readObject();
         } catch (IOException | ClassNotFoundException ex) {
-            System.out.printf("A problem accured deserializing %s%n", fileName);
-            System.out.println(ex.getMessage());
+            System.out.printf("A problem accured deserializing:" + ex.getMessage());
         }
 
         return sList;

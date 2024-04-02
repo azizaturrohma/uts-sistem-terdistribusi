@@ -18,8 +18,8 @@ public class FileOutputStreamDemo {
         int quantity = input.nextInt();
         input.nextLine();
 
-        for (int i = 0; i < quantity; i++) {
-            System.out.println("Masukkan nama panggilan mahasiswa ke-" + (i + 1));
+        for (int i = 1; i <= quantity; i++) {
+            System.out.println("Masukkan nama panggilan mahasiswa ke-" + i);
             String nickName = input.nextLine();
 
             output.write(nickName.getBytes()); // Menulis nama panggilan dari input pengguna ke dalam file

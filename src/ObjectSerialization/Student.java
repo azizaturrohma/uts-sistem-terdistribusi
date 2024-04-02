@@ -3,7 +3,7 @@ package ObjectSerialization;
 import java.io.Serializable;
 
 public class Student implements Serializable { // Class ini mengimplementasikan interface Serializable
-    // Properti/atribut
+    // Properti
     private final String nim;
     private final String name;
     private final String gender;
@@ -36,7 +36,7 @@ public class Student implements Serializable { // Class ini mengimplementasikan 
     }
 
     @Override
-    public String toString() { // Mengubah objek menjadi string
+    public String toString() { // Mengubah objek Student menjadi string
         return "[" + nim + ", " + name + ", " + gender + ", " + phoneNumber + "]";
     }
 }
