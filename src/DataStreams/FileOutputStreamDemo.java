@@ -2,6 +2,7 @@ package DataStreams;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.OutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -10,8 +11,8 @@ public class FileOutputStreamDemo {
         Scanner input = new Scanner(System.in);
 
         String destination = "src/DataStreams/file/2B.txt"; // letak destinasi file
-        FileOutputStream output = new FileOutputStream(destination, true); // valuenya true karena agar teks sebelumnya
-                                                                           // tetap ada (tidak ditimpa)
+        OutputStream output = new FileOutputStream(destination, true); // valuenya true karena agar teks sebelumnya
+                                                                       // tetap ada (tidak ditimpa)
 
         System.out.print("Masukkan jumlah mahasiswa yang ingin Anda inputkan: ");
         int quantity = input.nextInt();

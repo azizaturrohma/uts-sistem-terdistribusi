@@ -8,24 +8,24 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 public class SerializationDemo {
-    public void serialize(List<Student> pList, String fileName) {
+    public void serialize(List<Student> sList, String fileName) {
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(fileName))) {
-            out.writeObject(pList);
+            out.writeObject(sList);
         } catch (IOException ex) {
             System.out.println("A problem accured during serialization \n" + ex.getMessage());
         }
     }
 
     public List<Student> deserialize(String fileName) {
-        List<Student> pList = null;
+        List<Student> sList = null;
 
         try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(fileName))) {
-            pList = (List<Student>) in.readObject();
+            sList = (List<Student>) in.readObject();
         } catch (IOException | ClassNotFoundException ex) {
             System.out.printf("A problem accured deserializing %s%n", fileName);
             System.out.println(ex.getMessage());
         }
 
-        return pList;
+        return sList;
     }
 }

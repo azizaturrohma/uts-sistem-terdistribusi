@@ -41,12 +41,15 @@ public class SerializationApp {
         System.out.println("----------------------------------------------");
         System.out.println("Students: " + students);
 
+        // Membuat objek dari class SerializationDemo
         SerializationDemo demo = new SerializationDemo();
+
         demo.serialize(students, "src/ObjectSerialization/file/2B.ser");
         System.out.println("Serialization is done");
 
         System.out.println("Deserialize object...");
         List<Student> newList = demo.deserialize("src/ObjectSerialization/file/2B.ser");
+
         System.out.println("New List Student: " + newList);
     }
 }
